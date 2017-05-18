@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages
+  resources :catalogs
   get 'pages/landing'
 
   root 'pages#landing'
