@@ -1,33 +1,35 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  procedure_id: 1
+  procedure_identifier: 1
   procedure_name: MyString
   procedure_master_number: MyString
   synonyms: MyText
   test_code: MyString
   category_code: 1
+  category_name: MyString
   eppicare_inactive_flag: false
   orderable: false
-  collection_id: 1
+  collection_identifier: 1
   collection_name: MyString
-  collection_instruction: MyText
-  process_id: 1
+  collection_instructions: MyText
+  process_identifier: 1
   process_name: MyString
-  process_instruction: MyText
+  process_intructions: MyText
 
 two:
-  procedure_id: 1
+  procedure_identifier: 1
   procedure_name: MyString
   procedure_master_number: MyString
   synonyms: MyText
   test_code: MyString
   category_code: 1
+  category_name: MyString
   eppicare_inactive_flag: false
   orderable: false
-  collection_id: 1
+  collection_identifier: 1
   collection_name: MyString
-  collection_instruction: MyText
-  process_id: 1
+  collection_instructions: MyText
+  process_identifier: 1
   process_name: MyString
-  process_instruction: MyText
+  process_intructions: MyText

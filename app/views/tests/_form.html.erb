@@ -1,0 +1,168 @@
+<%= form_for(@test, html: { class: "form-horizontal", role: "form" }) do |f| %>
+
+  <%# Alert showing errors for this form %>
+  <% if @test.errors.any? %>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@test.errors.count, "error") %> prohibited this test from being saved:</h4>
+
+      <ul>
+      <% @test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%# procedure_identifier %>
+  <div class="form-group">
+    <%= f.label :procedure_identifier, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :procedure_identifier, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# procedure_name %>
+  <div class="form-group">
+    <%= f.label :procedure_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :procedure_name, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# procedure_master_number %>
+  <div class="form-group">
+    <%= f.label :procedure_master_number, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :procedure_master_number, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# synonyms %>
+  <div class="form-group">
+    <%= f.label :synonyms, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :synonyms, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# test_code %>
+  <div class="form-group">
+    <%= f.label :test_code, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :test_code, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# category_code %>
+  <div class="form-group">
+    <%= f.label :category_code, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :category_code, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# category_name %>
+  <div class="form-group">
+    <%= f.label :category_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :category_name, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# eppicare_inactive_flag %>
+  <div class="form-group">
+
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :eppicare_inactive_flag %>
+          Eppicare inactive flag
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <%# orderable %>
+  <div class="form-group">
+
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :orderable %>
+          Orderable
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <%# collection_identifier %>
+  <div class="form-group">
+    <%= f.label :collection_identifier, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :collection_identifier, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# collection_name %>
+  <div class="form-group">
+    <%= f.label :collection_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :collection_name, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# collection_instructions %>
+  <div class="form-group">
+    <%= f.label :collection_instructions, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :collection_instructions, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# process_identifier %>
+  <div class="form-group">
+    <%= f.label :process_identifier, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.number_field :process_identifier, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# process_name %>
+  <div class="form-group">
+    <%= f.label :process_name, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_field :process_name, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# process_intructions %>
+  <div class="form-group">
+    <%= f.label :process_intructions, class: "col-sm-2 control-label" %>
+    <div class="col-sm-10">
+      <%= f.text_area :process_intructions, class: "form-control" %>
+    </div>
+  </div>
+
+
+  <%# Submit %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end -%>

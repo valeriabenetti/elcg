@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CatalogTest < ActiveSupport::TestCase
+class TestTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
