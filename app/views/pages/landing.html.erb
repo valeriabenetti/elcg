@@ -102,4 +102,7 @@
   <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
 
   <h1>Test Catalog</h1>
+  <%- @tests.each do |test| %>
+    <%= test.procedure_name %>
+  <% end %>
 </div>
