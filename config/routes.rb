@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  mount Shrine::DownloadEndpoint => "/attachments"
-
   # For Users
   resources :tests
 
   namespace :admin do
-    resources :tests
+    resources :tests do
+      collection { post :import }
+    end
   end
 
   get 'pages/landing'

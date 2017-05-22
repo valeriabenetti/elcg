@@ -165,4 +165,11 @@
       <%= f.submit class: "btn btn-primary" %>
     </div>
   </div>
+
+
+  <h2>Import Files</h2>
+
+  <%= form_tag import_tests_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= sumbit_tag "Import" %>
 <% end -%>

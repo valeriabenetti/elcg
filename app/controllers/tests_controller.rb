@@ -4,6 +4,11 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
+  def import
+    Test.import(params[:file])
+    redirect_to root_path, notice: "File Imported"
+  end
+
   # GET /tests/1
   def show
     @test = Test.find(params[:id])

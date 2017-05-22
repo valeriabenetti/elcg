@@ -163,6 +163,9 @@ GEM
       netrc (~> 0.8)
     roda (2.25.0)
       rack
+    roo (2.7.1)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.4.23)
@@ -238,6 +241,7 @@ DEPENDENCIES
   refile!
   refile-postgres
   roda
+  roo (~> 2.7.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   shrine (~> 2.6, >= 2.6.1)
