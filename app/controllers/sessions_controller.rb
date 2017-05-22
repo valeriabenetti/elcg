@@ -32,6 +32,6 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
 
     # Once logged out, redirect to the landing path
-    redirect_to landing_path
+    redirect_to root_path
   end
 end
