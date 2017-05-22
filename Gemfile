@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 
 
 gem 'shrine', '~> 2.6', '>= 2.6.1'
+gem 'shrine-sql'
+gem 'roda'
 
 
 # Use Redis adapter to run Action Cable in production

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Shrine::DownloadEndpoint => "/attachments"
+
   # For Users
   resources :tests
 
