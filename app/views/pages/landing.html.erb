@@ -98,8 +98,10 @@
     </div>
   </form>
 </div>
+<% if logged_in? %>
 <div class="colum col-md-10" id="main">
   <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
+<% end %>
 
   <h1>Test Catalog</h1>
   <%- @tests.each do |test| %>
