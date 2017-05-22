@@ -31,9 +31,9 @@
           <li class="active"><%= link_to "Contact Us", "#" %></li>
           <% if logged_in? %>
             <li>
-              <p class="navbar-text btn btn-primary">Welcome: <%= current_user.name %></p>
+              Welcome: <%= current_user.name %>
             </li>
-            <li class="active"><%=link_to "Logout", logout_path, class: "btn btn-primary" %></li>
+            <li class="active"><%=link_to "Logout", logout_path %></li>
           <% else %>
             <li class="active"><%= link_to "Register", signup_path %></li>
             <li class="active"><%= link_to "Log In", login_path %></li>

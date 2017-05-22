@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  # For Users
   resources :tests
+
+  namespace :admin do
+    resources :tests
+  end
+
   get 'pages/landing'
 
   root 'pages#landing'

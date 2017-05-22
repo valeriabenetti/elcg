@@ -104,13 +104,13 @@ body {
     padding: 0 10px 2em 20px;
     z-index: 1;
     margin-left: 2em;
+  }
+  h1 {
+    text-align: center;
+  }
 
-    h1 {
-      text-align: center;
-      font-size: 230%;
-      margin-left: 2em;
-      padding-left: 1pt;
-
-    }
+  #test-list {
+    padding-top: 2em;
+    padding-left: 5em;
   }
 }
