@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
     else
       # Incorrect log in information
       redirect_to login_path
+    end
   end
 
   # Log Out
