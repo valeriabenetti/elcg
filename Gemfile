@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 
-
+gem 'shrine', '~> 2.6', '>= 2.6.1'
 
 
 # Use Redis adapter to run Action Cable in production

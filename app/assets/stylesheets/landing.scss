@@ -52,7 +52,7 @@ body {
 
       a {
         background-color: #d68222;
-        color: #fff;
+        color: black;
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -112,5 +112,10 @@ body {
   #test-list {
     padding-top: 2em;
     padding-left: 5em;
+
+    a {
+      color: black ;
+    }
+
   }
 }

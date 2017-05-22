@@ -1,18 +1,115 @@
-<div class="page-header">
-  <%= link_to tests_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <%= if logged_in? %>
-    <%= link_to edit_test_path(@test), class: 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-      Edit
-    <% end %>
-  <% end %>
-    <h1>Show test</h1>
-</div>
+<div id="search_sidebar" class="column col-md-2">
+  <form action="index.html" method="get">
+    <h2>Search Database</h2>
+    <div id="search_form">
+      <input id="search_text" class="column col-md-8" type="text" name="search" value placeholder="Search" autocomplete="off">
+      <div id="wrap">
+        <div id="field" style="display:none">
+        </div>
+      </div>
+      <button  id="button" class="btn btn-sm col-md-2" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    </div>
+    <div id="test_search">
+      <h4 class="active tab tab-control" id="test_name">Test Name</h4>
+      <ul class="active tab tab-panel">
+        <li>
+          <a href="#">A</a>
+        </li>
+        <li>
+          <a href="#">B</a>
+        </li>
+        <li>
+          <a href="#">C</a>
+        </li>
+        <li>
+          <a href="#">D</a>
+        </li>
+        <li>
+          <a href="#">E</a>
+        </li>
+        <li>
+          <a href="#">F</a>
+        </li>
+        <li>
+          <a href="#">G</a>
+        </li>
+        <li>
+          <a href="#">H</a>
+        </li>
+        <li>
+          <a href="#">I</a>
+        </li>
+        <li>
+          <a href="#">J</a>
+        </li>
+        <li>
+          <a href="#">K</a>
+        </li>
+        <li>
+          <a href="#">L</a>
+        </li>
+        <li>
+          <a href="#">M</a>
+        </li>
+        <li>
+          <a href="#">N</a>
+        </li>
+        <li>
+          <a href="#">O</a>
+        </li>
+        <li>
+          <a href="#">P</a>
+        </li>
+        <li>
+          <a href="#">Q</a>
+        </li>
+        <li>
+          <a href="#">R</a>
+        </li>
+        <li>
+          <a href="#">S</a>
+        </li>
+        <li>
+          <a href="#">T</a>
+        </li>
+        <li>
+          <a href="#">U</a>
+        </li>
+        <li>
+          <a href="#">V</a>
+        </li>
+        <li>
+          <a href="#">W</a>
+        </li>
+        <li>
+          <a href="#">X</a>
+        </li>
+        <li>
+          <a href="#">Y</a>
+        </li>
+        <li>
+          <a href="#">Z</a>
+        </li>
+        <li>
+          <a href="#">#</a>
+        </li>
 
-<dl class="dl-horizontal">
+      </ul>
+    </div>
+  </form>
+</div>
+<%= link_to pages_landing_path, class: 'btn btn-default pull-right' do %>
+  <span class="glyphicon glyphicon-list-alt"></span>
+  Back
+<% end %>
+  <%= link_to edit_test_path(@test), class: 'btn btn-primary pull-right' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show test</h1>
+
+
+<dl class="dl-horizontal col-md-10">
   <dt>Procedure identifier:</dt>
   <dd><%= @test.procedure_identifier %></dd>
 
