@@ -106,7 +106,7 @@
   <h1 class="colum col-md-10"> Test Catalog</h1>
   <div id="test-list" class="container col-md-10">
     <%- @tests.each do |test| %>
-      <%= link_to "#{test.procedure_name}", test_path(:id) %>
+      <%= link_to "#{test.procedure_name}", test_path(test) %>
     <% end %>
   </div>
 </div>
