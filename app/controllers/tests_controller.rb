@@ -6,7 +6,6 @@ class TestsController < ApplicationController
     else
       @tests = Test.all
     end
-    @test = @test.page(params[:page]).per(50)
   end
 
   # GET /tests/1

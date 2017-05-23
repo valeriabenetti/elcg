@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   # For Users
-  resources :tests
+  resources :tests do
+    collection do
+      get :starts_with_search
+    end
+  end
 
   namespace :admin do
     resources :tests do
-      collection { post :import }
+      collection do
+        post :import
+      end
     end
   end
 
