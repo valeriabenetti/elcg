@@ -20,7 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem "roo", "~> 2.7.0"
+# Use Kaminari for pagination
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+
 
 gem 'shrine', '~> 2.6', '>= 2.6.1'
 gem 'shrine-sql'

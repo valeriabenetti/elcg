@@ -2,12 +2,11 @@
   <form action="index.html" method="get">
     <h2>Search Database</h2>
     <div id="search_form">
-      <input id="search_text" class="column col-md-8" type="text" name="search" value placeholder="Search" autocomplete="off">
-      <div id="wrap">
-        <div id="field" style="display:none">
+      <%= form_tag(tests_path, method: "GET", class: "navbar-form navbar-right search-form") do%>
+        <div class="form-group">
+          <%= text_field_tag :query, nil, class: "form-control", placeholder: "Search..." %>
         </div>
-      </div>
-      <button  id="button" class="btn btn-sm col-md-2" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+      <% end %>
     </div>
     <div id="test_search">
       <h4 class="active tab tab-control" id="test_name">Test Name</h4>

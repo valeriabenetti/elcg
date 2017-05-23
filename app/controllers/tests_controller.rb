@@ -2,11 +2,10 @@ class TestsController < ApplicationController
   # GET /tests
   def index
     @tests = Test.all
-  end
 
-  def import
-    Test.import(params[:file])
-    redirect_to root_path, notice: "File Imported"
+    if params[:search]
+      @tests = Test.where("procedure_name like :pattern", "%#{:query}%")
+    end
   end
 
   # GET /tests/1

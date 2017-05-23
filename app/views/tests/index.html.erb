@@ -1,11 +1,115 @@
-<div class="page-header">
-  <%= link_to new_test_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Test
-  <% end %>
-  <h1 Listing>tests</h1>
-</div>
-
-      <%- @tests.each do |test| %>
-      <%= test.procedure_name %>
+<div id="search_sidebar" class="column col-md-2">
+  <form action="index.html" method="get">
+    <h2>Search Database</h2>
+    <div id="search_form">
+      <%= form_tag(tests_path, method: "GET", class: "navbar-form navbar-right search-form") do%>
+        <div class="form-group">
+          <%= text_field_tag :query, nil, class: "form-control", placeholder: "Search..." %>
+        </div>
       <% end %>
+    </div>
+    <div id="test_search">
+      <h4 class="active tab tab-control" id="test_name">Test Name</h4>
+      <ul class="active tab tab-panel">
+        <li>
+          <a href="#">A</a>
+        </li>
+        <li>
+          <a href="#">B</a>
+        </li>
+        <li>
+          <a href="#">C</a>
+        </li>
+        <li>
+          <a href="#">D</a>
+        </li>
+        <li>
+          <a href="#">E</a>
+        </li>
+        <li>
+          <a href="#">F</a>
+        </li>
+        <li>
+          <a href="#">G</a>
+        </li>
+        <li>
+          <a href="#">H</a>
+        </li>
+        <li>
+          <a href="#">I</a>
+        </li>
+        <li>
+          <a href="#">J</a>
+        </li>
+        <li>
+          <a href="#">K</a>
+        </li>
+        <li>
+          <a href="#">L</a>
+        </li>
+        <li>
+          <a href="#">M</a>
+        </li>
+        <li>
+          <a href="#">N</a>
+        </li>
+        <li>
+          <a href="#">O</a>
+        </li>
+        <li>
+          <a href="#">P</a>
+        </li>
+        <li>
+          <a href="#">Q</a>
+        </li>
+        <li>
+          <a href="#">R</a>
+        </li>
+        <li>
+          <a href="#">S</a>
+        </li>
+        <li>
+          <a href="#">T</a>
+        </li>
+        <li>
+          <a href="#">U</a>
+        </li>
+        <li>
+          <a href="#">V</a>
+        </li>
+        <li>
+          <a href="#">W</a>
+        </li>
+        <li>
+          <a href="#">X</a>
+        </li>
+        <li>
+          <a href="#">Y</a>
+        </li>
+        <li>
+          <a href="#">Z</a>
+        </li>
+        <li>
+          <a href="#">#</a>
+        </li>
+
+      </ul>
+    </div>
+  </form>
+</div>
+<% if logged_in? %>
+<div class="colum col-md-10" id="main">
+  <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
+<% end %>
+
+  <h1 class="colum col-md-10"> Test Catalog</h1>
+  <div id="test-list" class="container col-md-12">
+    <%- @tests.each do |test| %>
+    <ul>
+      <li>
+        <%= link_to "#{test.procedure_name}", test_path(test) %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</div>

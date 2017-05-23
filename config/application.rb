@@ -1,5 +1,3 @@
-require 'csv'
-require 'iconv'
 require_relative 'boot'
 
 require 'rails/all'
