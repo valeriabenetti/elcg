@@ -1,11 +1,12 @@
 class TestsController < ApplicationController
   # GET /tests
   def index
-    @tests = Test.all
-
     if params[:search]
       @tests = Test.where("procedure_name like :pattern", "%#{:query}%")
+    else
+      @tests = Test.all
     end
+    @test = @test.page(params[:page]).per(50)
   end
 
   # GET /tests/1

@@ -1,0 +1,7 @@
+console.log('This is from the server. There are <%= @test.size %> tests that matched')
+
+<% if @tests.empty? %>
+  $('.test-list-group').html('<%= j(render 'empty_tests') %>')
+<% else %>
+  $('.test-list-group').html('<%= j(render '@tests') %>')
+<% end %>

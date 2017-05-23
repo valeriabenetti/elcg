@@ -14,3 +14,4 @@
 
 //= require 'cable'
 //= require 'test'
+//= require bootstrap

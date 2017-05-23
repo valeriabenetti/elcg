@@ -1,3 +1,6 @@
+// Place al the behaviors and hooks realted to the matching controller here.
+// all this logic will automatically be available in application.js
+
 $(document).ready(function() {
   $('.media-heading').on('click', function(event) {
     $(this).css({color: 'orange'})
@@ -9,7 +12,7 @@ $(document).ready(function() {
     console.log(`You are searching for ${queryValue}`)
 
     $.ajax({
-      url: '/pages/landing',
+      url: '/tests',
       data: { query: queryValue },
       dataType: 'script'
     })
