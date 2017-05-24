@@ -1,26 +1,3 @@
-<div id="search_sidebar" class="column col-md-2">
-  <h2>Search Database</h2>
-  <div id="search_form">
-    <%= form_tag(tests_path, method: "GET", class: "navbar-form navbar-right search-form") do%>
-      <div id="search_text" class="form-group">
-        <%= text_field_tag :query, nil, class: "form-control", placeholder: "Search..." %>
-      </div>
-    <% end %>
-  </div>
-  <div id="test_search">
-    <h4 class="active tab tab-control" id="test_name">Test Name</h4>
-    <ul class="active tab tab-panel">
-      <% ('A'..'Z').each do |letter| %>
-        <li>
-          <%= link_to letter, starts_with_search_tests_path(query: letter)  %>
-        </li>
-      <% end %>
-      <li>
-        <%= link_to "#", starts_with_search_tests_path(query: "#")  %>
-      </li>
-    </ul>
-  </div>
-</div>
 <% if logged_in? %>
 <div class="colum col-md-10" id="main">
   <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>

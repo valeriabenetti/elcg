@@ -2,7 +2,7 @@ class TestsController < ApplicationController
   # GET /tests
   def index
     if params[:search]
-      @tests = Test.where("procedure_name like :pattern", "%#{:query}%")
+      @tests = Test.search(params[:search])
     else
       @tests = Test.all
     end

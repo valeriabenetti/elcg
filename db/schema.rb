@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522195812) do
+ActiveRecord::Schema.define(version: 20170524135227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170522195812) do
     t.integer "collection_identifier"
     t.string "collection_name"
     t.text "collection_instructions"
-    t.integer "process_identifier"
+    t.bigint "process_identifier"
     t.string "process_name"
     t.text "process_intructions"
     t.datetime "created_at", null: false

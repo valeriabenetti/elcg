@@ -15,11 +15,11 @@ class SessionsController < ApplicationController
     # If we have found the user and their password checkout
     if user && user.authenticate(password)
       # Save the user_id in the session cookie
-      session[:user_id] = user_id
+      session[:user_id] = user.id
 
       # logged in
       # Redirect to the lading page
-      redirect_to landing_path
+      redirect_to root_path
     else
       # Incorrect log in information
       redirect_to login_path
