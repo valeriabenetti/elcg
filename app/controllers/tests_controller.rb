@@ -9,7 +9,7 @@ class TestsController < ApplicationController
       @tests = Test.all
     end
 
-    @tests = @tests.order('procedure_name').page(params[:page]).per(50)
+    @tests = @tests.order('procedure_name').page(params[:page]).per(25)
   end
 
   # GET /tests/1
