@@ -1,21 +1,21 @@
-  <% if @tests.empty? %>
-    <%= render 'empty_tests' %>
-  <% else %>
-    <div id="main">
-      <% if logged_in? %>
-        <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
-      <% end %>
-      <h1> Test Catalog</h1>
-      <div id="test-list">
-        <div class="list-group">
-          <%- @tests.each do |test| %>
-            <%= link_to test_path(test), class: "list-group-item" do %>
-              <%= test.procedure_name %>
-              <span class="badge pull-right">+</span>
-            <% end %>
+<% if @tests.empty? %>
+  <%= render 'empty_tests' %>
+<% else %>
+  <div id="main">
+    <% if logged_in? %>
+      <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
+    <% end %>
+    <h1> Test Catalog</h1>
+    <div id="test-list">
+      <div class="list-group">
+        <%- @tests.each do |test| %>
+          <%= link_to test_path(test), class: "list-group-item" do %>
+            <%= test.procedure_name %>
+            <span class="badge pull-right">+</span>
           <% end %>
-        </div>
+        <% end %>
       </div>
-      <%= paginate @tests %>
     </div>
-  <%end%>
+    <%= paginate @tests %>
+  </div>
+<%end%>
