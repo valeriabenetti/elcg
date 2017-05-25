@@ -3,6 +3,8 @@ class TestsController < ApplicationController
   def index
     if params[:search]
       @tests = Test.search(params[:search])
+    elsif params[:letter]
+      @tests = Test.starts_with(params[:letter])
     else
       @tests = Test.all
     end

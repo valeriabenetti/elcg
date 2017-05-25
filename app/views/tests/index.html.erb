@@ -1,19 +1,20 @@
 <% if @tests.empty? %>
   <%= render 'empty_tests' %>
 <% else %>
-  <div class="colum col-md-10" id="main">
+  <div id="main">
     <% if logged_in? %>
       <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
     <% end %>
-    <h1 class="colum col-md-10"> Test Catalog</h1>
-    <div id="test-list" class="container col-md-12">
-      <%- @tests.each do |test| %>
-      <ul>
-        <li>
-          <%= link_to "#{test.procedure_name}", test_path(test) %>
-        </li>
-      </ul>
-      <% end %>
+    <h1> Test Catalog</h1>
+    <div id="test-list">
+      <div class="list-group">
+        <%- @tests.each do |test| %>
+          <%= link_to test_path(test), class: "list-group-item" do %>
+            <%= test.procedure_name %>
+            <span class="badge pull-right">+</span>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     <%= paginate @tests %>
   </div>
