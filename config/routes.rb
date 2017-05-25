@@ -14,11 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'pages/landing'
-
-  root 'pages#landing'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root 'tests#index'
+  
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 

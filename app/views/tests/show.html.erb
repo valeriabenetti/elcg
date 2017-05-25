@@ -1,11 +1,11 @@
 <% if logged_in? %>
-    <%= link_to edit_test_path, class: 'btn btn-primary pull-right' do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-      Edit
-    <% end %>
-    <i class="fa fa-3x fa-bookmark-o pull-right" aria-hidden="true"></i>
+  <i class="fa fa-3x fa-bookmark-o pull-right" aria-hidden="true"></i>
+  <%= link_to edit_test_path, class: 'btn btn-primary pull-right' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
 <% end %>
-<%= link_to pages_landing_path, class: 'btn btn-default pull-right' do %>
+<%= link_to root_path, class: 'btn btn-default pull-right' do %>
   <span class="glyphicon glyphicon-list-alt"></span>
   Back
 <% end %>

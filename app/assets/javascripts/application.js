@@ -13,5 +13,5 @@
 //= require rails-ujs
 
 //= require 'cable'
-//= require 'test'
+//= require 'tests'
 //= require bootstrap

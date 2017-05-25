@@ -6,6 +6,8 @@ class TestsController < ApplicationController
     else
       @tests = Test.all
     end
+
+    @tests = @tests.order('procedure_name').page(params[:page]).per(50)
   end
 
   # GET /tests/1

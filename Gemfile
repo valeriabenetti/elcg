@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use Kaminari for pagination
-gem 'kaminari', '~> 1.0', '>= 1.0.1'
+gem 'kaminari'
 
 
 gem 'shrine', '~> 2.6', '>= 2.6.1'

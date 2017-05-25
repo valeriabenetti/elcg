@@ -1,3 +1,6 @@
+<% if @tests.empty? %>
+  <%= render 'empty_tests' %>
+<% else %>
   <div class="colum col-md-10" id="main">
     <% if logged_in? %>
       <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
@@ -12,4 +15,6 @@
       </ul>
       <% end %>
     </div>
+    <%= paginate @tests %>
   </div>
+<%end%>

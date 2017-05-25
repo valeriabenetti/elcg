@@ -1,0 +1,7 @@
+console.log('This is from the server. There are <%= @tests.sixe tests that match %>')
+
+<% if @tests.empty? %>
+  $('.test-list-group').html('<%= j(render '_empty_tests') %>')
+<% else %>
+  $('.tests-list-group').html('<%= j(render @tests) %>')
+<% end %>
