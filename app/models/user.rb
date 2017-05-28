@@ -4,4 +4,6 @@ class User < ApplicationRecord
   validates_length_of :password, in: 6..20, on: :create
 
   has_secure_password
+
+  has_many :favorites
 end

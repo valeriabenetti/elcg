@@ -296,7 +296,7 @@ DEPENDENCIES
   roda
   sass-rails (~> 5.0)
   selenium-webdriver
-  shrine (~> 2.6, >= 2.6.1)
+  shrine
   shrine-sql
   tzinfo-data
   uglifier (>= 1.3.0)

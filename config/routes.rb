@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # For Users
   resources :tests do
+    member do
+      post 'favorite'
+      post 'unfavorite'
+    end
     collection do
       get :starts_with_search
     end
@@ -15,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   root 'tests#index'
-  
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 

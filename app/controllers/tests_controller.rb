@@ -55,6 +55,23 @@ class TestsController < ApplicationController
     redirect_to tests_url, notice: 'Test was successfully destroyed.'
   end
 
+  def favorite
+    test = Test.find(params[:id])
+
+    Favorite.create(test: test, user: current_user)
+
+    Rails.logger.info "Bookmarking Test #{test.name}"
+  end
+
+  def unfavorite
+    test = Test.find(parmas[:id])
+
+    favorite = Favorite.find_by(test: test, user: current_user)
+    favorite.destroy
+
+    Rails.logger.info "Un-Bookmarking Test #{test.name}"
+  end
+
   private
 
   # Only allow a trusted parameter "white list" through.

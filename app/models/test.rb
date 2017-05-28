@@ -1,4 +1,6 @@
 class Test < ApplicationRecord
+  has_many :favorites
+
   def self.search(search)
     search = search.upcase
     where("procedure_name like ?", "%#{search}%")

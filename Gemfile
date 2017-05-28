@@ -24,7 +24,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'kaminari'
 
 
-gem 'shrine', '~> 2.6', '>= 2.6.1'
+gem 'shrine'
 gem 'shrine-sql'
 gem 'roda'
 
