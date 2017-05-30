@@ -30,6 +30,9 @@ gem 'shrine'
 gem 'shrine-sql'
 gem 'roda'
 
+# Creating User Profiles
+gem 'devise'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
