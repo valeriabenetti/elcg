@@ -11,11 +11,10 @@
         <%- @tests.each do |test| %>
           <%= link_to test_path(test), class: "list-group-item" do %>
             <%= test.procedure_name %>
-            <span class=" badge glyphicon glyphicon-star pull-right" aria-hidden="true"></span>
           <% end %>
         <% end %>
       </div>
     </div>
-    <%= paginate @tests %>
   </div>
+  <%= paginate @tests %>
 <%end%>
