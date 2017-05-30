@@ -12,9 +12,9 @@
           <div class="list-group tests-list-group">
             <%= render @tests %>
           </div>
+          <%= paginate @tests %>
         </div>
       </div>
     </div>
   </div>
-  <%= paginate @tests %>
 <%end%>
