@@ -1,12 +1,11 @@
 class TestsController < ApplicationController
   # GET /tests
   def index
-    if params[:search]
-      @tests = Test.search(params[:search])
-    elsif params[:letter]
-      @tests = Test.starts_with(params[:letter])
-    elsif params[:number]
-      @tests = Test.starts_with(params[:number])
+    @search = params[:search]
+    if @search
+      @tests = Test.search(@search)
+    elsif params[:starts_with]
+      @tests = Test.starts_with(params[:starts_with])
     else
       @tests = Test.all
     end
@@ -60,7 +59,7 @@ class TestsController < ApplicationController
   def favorite
     test = Test.find(params[:id])
 
-    favorite.create(test: test, user: current_user)
+    Favorite.create(test: test, user: current_user)
 
     Rails.logger.info "Bookmarking Test #{test.procedure_name}"
   end
@@ -68,7 +67,7 @@ class TestsController < ApplicationController
   def unfavorite
     test = Test.find(params[:id])
 
-    favorite = favorite.find_by(test: test, user: current_user)
+    favorite = Favorite.find_by(test: test, user: current_user)
     favorite.destroy
 
     Rails.logger.info "Un-Bookmarking Test #{test.procedure_name}"

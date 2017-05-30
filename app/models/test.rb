@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
   def self.search(search)
     search = search.upcase
@@ -7,9 +7,10 @@ class Test < ApplicationRecord
   end
 
   def self.starts_with(letter)
-    # if this is a `#` then do a different search...
-    #  where(....)
-    # else
+    if letter == "#"
+      where("procedure_name similar to ?", "[1-9]%")
+    else
       where("procedure_name like ?", "#{letter}%")
+    end
   end
 end

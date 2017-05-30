@@ -1,7 +1,14 @@
+
 console.log('This is from the server. There are <%= @tests.size %> tests that match')
+
+<% if @search.blank? %>
+  window.location = '<%= tests_path %>'
+<% end %>
 
 <% if @tests.empty? %>
   $('.tests-list-group').html('<%= j(render 'empty_tests') %>')
 <% else %>
   $('.tests-list-group').html('<%= j(render @tests) %>')
 <% end %>
+
+$('.pagination').hide()

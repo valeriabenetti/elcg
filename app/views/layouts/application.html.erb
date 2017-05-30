@@ -23,12 +23,6 @@
   <nav class="navbar navbar-fixed-top" role="navigation">
    <div class="container">
      <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
        <%= link_to image_tag("logo.png", :alt => "ELCG Logo", size: "150x50"), root_path %>
      </div>
      <div id="navbar" class="collapse navbar-collapse">
@@ -69,11 +63,11 @@
           <ul class="active tab tab-panel">
             <% ('A'..'Z').each do |letter| %>
               <li>
-                <%= link_to letter, tests_path(letter: letter)  %>
+                <%= link_to letter, tests_path(starts_with: letter)  %>
               </li>
             <% end %>
             <li>
-              <%= link_to "#", tests_path(number: 1..9 )  %>
+              <%= link_to "#", tests_path(starts_with: "#" )  %>
             </li>
           </ul>
         </div>
