@@ -23,6 +23,8 @@ gem 'uglifier', '>= 1.3.0'
 # Use Kaminari for pagination
 gem 'kaminari'
 
+# Include jquery
+gem 'jquery-rails'
 
 gem 'shrine'
 gem 'shrine-sql'

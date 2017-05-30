@@ -7,19 +7,20 @@ $(document).ready(function() {
     $(this).css({color: 'orange'})
   })
 
-  $('#query').on('input', function(event) {
+  $('#search').on('input', function(event) {
     let queryValue = $(this).val()
 
     console.log(`You are searching for ${queryValue}`)
 
     $.ajax({
       url: '/tests',
-      data: { query: queryValue },
+      data: { search: queryValue },
       dataType: 'script'
     })
   })
 
   $('body').on('click', '.favorite-test', function(event) {
+    console.log('CLICKING')
     let favorited = $(this).hasClass('favorited')
 
     $(this).toggleClass('favorited')

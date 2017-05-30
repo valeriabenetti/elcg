@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <span class="btn btn-default glyphicon glyphicon-save pull-right">Save</span>
+  <span class="btn btn-default glyphicon glyphicon-save favorite-test pull-right" data-test-id="<%= @test.id %>">Save</span>
   <%= link_to edit_test_path, class: 'btn btn-primary pull-right' do %>
     <span class="glyphicon glyphicon-pencil"></span>
     Edit

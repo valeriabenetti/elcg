@@ -6,13 +6,13 @@
       <%= link_to "New Test", new_test_path, class: 'new-home-button btn btn-primary pull-right' %>
     <% end %>
     <h1> Test Catalog</h1>
-    <div id="test-list">
-      <div class="list-group">
-        <%- @tests.each do |test| %>
-          <%= link_to test_path(test), class: "list-group-item" do %>
-            <%= test.procedure_name %>
-          <% end %>
-        <% end %>
+    <div class='row'>
+      <div class="col-sm-12">
+        <div id="test-list">
+          <div class="list-group tests-list-group">
+            <%= render @tests %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
