@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     let testid = $(this).data('test-id') // data-test-id="....."
 
-    console.log(`clicked on a star for test ${testid}`)
+    console.log(`clicked on a save for test ${testid}`)
 
     let url = favorited ? `/tests/${testid}/unfavorite` : `/tests/${testid}/favorite`
 

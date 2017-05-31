@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  before_filter :set_user, only: [:show]
+
+  def show
+  end
+
   def new
     @user = User.new
   end
@@ -20,5 +25,9 @@ class UsersController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_user
+  @user = User.find(params[:id])
   end
 end

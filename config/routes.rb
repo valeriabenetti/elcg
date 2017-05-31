@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :profiles
   # For Users
+  resources :users
   resources :tests do
     member do
       post 'favorite'
@@ -7,14 +9,6 @@ Rails.application.routes.draw do
     end
     collection do
       get :starts_with_search
-    end
-  end
-
-  namespace :admin do
-    resources :tests do
-      collection do
-        post :import
-      end
     end
   end
 

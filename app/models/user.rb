@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one :profile
   validates :email, presence: true, uniqueness: true
   validates :password, confirmation: true # password_confirmation attr
   validates_length_of :password, in: 6..20, on: :create
