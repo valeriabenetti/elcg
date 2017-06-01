@@ -30,8 +30,8 @@
         <div class="dropdown" id="dropdown-nav">
           <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Welcome: <%= current_user.name %> <span class="caret"></span></button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li class="active"><%= link_to "Profile", root_path %></li>
-            <li class="active"><%= link_to "Logout", logout_path %></li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Logout", logout_path %></li>
           </ul>
         </div>
        <% else %>

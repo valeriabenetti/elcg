@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :profiles
   # For Users
   resources :users
+  get 'user' => 'users#show'
+
   resources :tests do
     member do
       post 'favorite'
