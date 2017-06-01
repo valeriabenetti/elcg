@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530215955) do
+ActiveRecord::Schema.define(version: 20170601000056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 20170530215955) do
   create_table "files", force: :cascade do |t|
     t.binary "content"
     t.text "metadata"
-  end
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.string "role"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "tests", force: :cascade do |t|
@@ -68,5 +59,4 @@ ActiveRecord::Schema.define(version: 20170530215955) do
 
   add_foreign_key "favorites", "tests"
   add_foreign_key "favorites", "users"
-  add_foreign_key "profiles", "users"
 end
