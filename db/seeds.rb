@@ -31,3 +31,6 @@ csv.each do |row|
   test.save
   puts "Test Saved"
 end
+
+
+Admin.create email: 'vbenetti46@gmail.com', password: 'insecure-password'
