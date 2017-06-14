@@ -17,7 +17,6 @@ class TestsController < ApplicationController
   def show
     @test = Test.find(params[:id])
   end
-
   # GET /tests/new
   def new
     @test = Test.new
