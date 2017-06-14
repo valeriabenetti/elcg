@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :admins
   # For Users
   resources :users
   get 'user' => 'users#show'
