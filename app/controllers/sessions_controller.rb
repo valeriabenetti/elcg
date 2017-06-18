@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authroize
+  # skip_before_action :authroize
   # loggin in
   def new
   end
