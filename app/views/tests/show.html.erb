@@ -13,6 +13,13 @@
 
 
 <dl class="dl-horizontal col-md-10">
+
+  <% if @test.image_url %>
+    <dd><%= image_tag(@test.image_url) %></dd>
+  <% else %>
+    <dd><%= image_tag("stock.jpg") %></dd>
+  <% end %>
+
   <dt>Procedure identifier:</dt>
   <dd><%= @test.procedure_identifier %></dd>
 

@@ -15,6 +15,14 @@
       </div>
     <% end %>
 
+    <div class="form-group control-label">
+      <div class="col-sm-12">
+        <%= f.hidden_field :image, value: @test.cached_image_data %>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+
     <%# procedure_identifier %>
     <div class="form-group">
       <%= f.label :procedure_identifier, class: "col-sm-2 control-label" %>
