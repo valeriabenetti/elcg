@@ -1,5 +1,5 @@
 class Test < ApplicationRecord
-   include ImageUploader[:image]
+  include ImageUploader[:image]
   has_many :favorites, dependent: :destroy
 
   def self.search(search)
