@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   mount Shrine::DownloadEndpoint => "/attachments"
-
   # For Users
-  resources :users, only: [:create, :update] do
-    collection do
-      get 'user' => 'users#show'
-      post 'email_update'
+  resources :users
+  get 'user' => 'users#show'
 
   resources :tests do
     member do
@@ -26,7 +23,4 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  post 'password/forgot' => 'password#forgot'
-  post 'password/reset' => 'password#reset'
-  put 'password/update' => 'password#update'
 end
