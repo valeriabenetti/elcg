@@ -1,4 +1,18 @@
 class User < ApplicationRecord
+  before_create { generate_token(:auth_token)}
+
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    UserMailer.password_reset(self).deliver
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_one :profile
@@ -11,25 +25,4 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :tests, through: :favorites
 
-  def generate_password_token!
-  self.reset_password_token = generate_token
-  self.reset_password_sent_at = Time.now.utc
-  save!
-  end
-
-  def password_token_valid?
-    (self.reset_password_sent_at + 4.hours) > Time.now.utc
-  end
-
-  def reset_password!(password)
-    self.reset_password_token = nil
-    self.password = password
-    save!
-  end
-
-  private
-
-  def generate_token
-    SecureRandom.hex(10)
-  end
 end

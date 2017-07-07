@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
   mount Shrine::DownloadEndpoint => "/attachments"
   # For Users
   resources :users
