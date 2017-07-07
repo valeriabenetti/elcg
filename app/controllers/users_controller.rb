@@ -20,6 +20,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if current_user.update_new_email!(@new_email)
+      # SEND EMAIL HERE
+      render json: { status: 'Email Confirmation has been sent to your new Email.' }, status: :ok
+    else
+      render json: { errors: current_user.errors.values.flatten.compact }, status: :bad_request
+    end
+  end
+
   private
 
   # Only allow a trusted parameter "white list" through.

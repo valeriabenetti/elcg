@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   mount Shrine::DownloadEndpoint => "/attachments"
+
   # For Users
-  resources :users
-  get 'user' => 'users#show'
+  resources :users, only: [:create, :update] do
+    collection do
+      get 'user' => 'users#show'
+      post 'email_update'
 
   resources :tests do
     member do
