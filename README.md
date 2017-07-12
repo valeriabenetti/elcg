@@ -1,24 +1,4 @@
-# README
+# Hospital Test Catalog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The purpose of this project was to enable hospitals to be able to scan a test tube code and be able to look up the up-to date handling instructions for the each test, as well see the correct test tube top color.
