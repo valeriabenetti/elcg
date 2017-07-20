@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for(@test, html: { class: "form-horizontal", role: "form" }) do |f| %>
+  <%= form_for(@test, html: { class: "form-horizontal", role: "form", multipart: true }) do |f| %>
 
     <%# Alert showing errors for this form %>
     <% if @test.errors.any? %>
