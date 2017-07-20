@@ -15,5 +15,7 @@ class PasswordResetsController < ApplicationController
   def update
     @user = User.find_by_password_reset_token!(params[:id])
     if @user.password_reset_sent_at < 2.hours.ago
+      # do SOMETHING!!!
+    end
   end
 end
