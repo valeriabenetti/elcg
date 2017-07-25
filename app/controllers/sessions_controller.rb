@@ -29,9 +29,7 @@ class SessionsController < ApplicationController
 
   # Log Out
   def destroy
-    # Remove the user_id from the session
-    session[:user_id] = nil
-
+    log_out if logged_in?
     # Once logged out, redirect to the landing path
     redirect_to root_path
   end
