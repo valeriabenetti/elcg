@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(password)
       # Save the user_id in the session cookie
       session[:user_id] = user.id
-
-      # logged in
+      # logged in and remembering the user
+      remember user
       # Redirect to the lading page
       redirect_to root_path
     else
@@ -29,9 +29,7 @@ class SessionsController < ApplicationController
 
   # Log Out
   def destroy
-    # Remove the user_id from the session
-    session[:user_id] = nil
-
+    log_out if logged_in?
     # Once logged out, redirect to the landing path
     redirect_to root_path
   end
