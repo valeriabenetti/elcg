@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(password)
       # Save the user_id in the session cookie
       session[:user_id] = user.id
-
-      # logged in
+      # logged in and remembering the user
+      remember user
       # Redirect to the lading page
       redirect_to root_path
     else
